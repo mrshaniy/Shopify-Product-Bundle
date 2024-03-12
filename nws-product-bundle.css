@@ -1,0 +1,91 @@
+/* bundle product css start */
+.nws-bundle-title {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.custom_selector_product.main_product_selector {
+    margin-top: 24px;
+}
+span.nws-bndle-pdp-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+ul.nws-bundle-wrapper {
+    padding: 0;
+    list-style: none;
+    max-width: 44rem;
+    margin-top: 12px;
+}
+li.nws-bundle-text {
+    margin-bottom: 15px;
+    padding: 20px 15px;
+    list-style: none;
+    background: #D9D9D9;
+    border-radius: 10px;
+    /* cursor: pointer; */
+}
+li.nws-bundle-text:last-child {
+    margin-bottom: 0;
+}
+.wrapper_box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.check {
+    line-height: 0;
+    margin-right:20px;
+}
+.wrapper_box .check input {
+    width: 16px;
+    height: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    background: white;
+    border-radius: 2px;
+    margin: 0;
+    cursor: pointer;
+}
+.wrapper_box .check input:checked {
+    background-image: url(https://cdn.shopify.com/s/files/1/0678/8333/files/icon__checkmark.svg?v=1615858459);
+    background-size: 11px 11px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: none;
+}
+.bundle-img {
+    margin-right: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 0;
+}
+.bundle-img img {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+}
+.pdp-content span.storage-product-price {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+}
+.atc_btn .btn.btn--add-to-cart {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    max-width: 44rem;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}

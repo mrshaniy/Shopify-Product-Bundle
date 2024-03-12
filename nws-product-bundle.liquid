@@ -1,0 +1,55 @@
+{% comment %} These products are selectin from metafields u can get products according to your need {% endcomment %}
+
+{% if product.metafields.custom.bundle_product != blank %}
+  <div class="custom_selector_product main_product_selector">
+    <h2 class="nws-bundle-title">Add Ons</h2>
+    <ul class="nws-bundle-wrapper">
+      {% for blk in product.metafields.custom.bundle_product.value %}
+        {% assign pdp = blk.pdpdata.value %}
+        <li class="nws-bundle-text">
+          <div class="wrapper_box">
+            <div class="check">
+              <input type="checkbox" name="product{{ forloop.index }}_chk" id="product{{ forloop.index }}_chk">
+            </div>
+            <div class="bundle-img">
+              <img src="{{ pdp.featured_image | img_url: '70x' }}" alt="{{ pdp.title }}">
+            </div>
+            <div class="pdp-content">
+              <span class="nws-bndle-pdp-title">{{ pdp.title }}</span>
+              <span class="storage-product-price">{{ pdp.price | money }}</span>
+              <input
+                id="product{{ forloop.index }}_id"
+                name="product{{ forloop.index }}_id"
+                value="{{ pdp.selected_or_first_available_variant.id }}"
+                type="hidden"
+              >
+              <input
+                id="v{{ pdp.selected_or_first_available_variant.id }}"
+                data-price="{{ pdp.price | money_without_currency }}"
+                type="hidden"
+              >
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="custom_selector_product_total">
+      {% for blk in product.metafields.custom.bundle_product.value %}
+        {% assign pdp = blk.pdpdata.value %}
+        <input
+          type="hidden"
+          data-qty="1"
+          id="p_v{{ forloop.index }}"
+          data-price="{{ pdp.price | money_without_currency }}"
+          data-id="{{ pdp.selected_or_first_available_variant.id }}"
+        >
+      {% endfor %}
+      <div class="atc_btn">
+        <button onclick="frequently_bundle()" type="button" name="add" class="btn btn--add-to-cart">
+          <span class="btn__text">Add to cart</span>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endif %}
